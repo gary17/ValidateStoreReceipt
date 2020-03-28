@@ -20,18 +20,18 @@
 
 #import "validatereceipt.h"
 
-const NSString * global_bundleVersion = @"1.0.2";
-const NSString * global_bundleIdentifier = @"com.example.SampleApp";
+const NSString *global_bundleVersion = @"1.0.2";
+const NSString *global_bundleIdentifier = @"com.example.SampleApp";
 
-int main (int argc, const char * argv[]) {
+int main (int argc, const char *argv[]) {
 #if !__has_feature(objc_arc)
-    NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
+    NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
 #endif
 	// put the example receipt on the desktop (or change that path)
-	NSString * pathToReceipt = @"~/Desktop/receipt";
+	NSString *pathToReceipt = @"~/Desktop/receipt";
 	
 	// in your own code you have to do:
-	// NSString * pathToReceipt = [[[NSBundle mainBundle] bundlePath] stringByAppendingPathComponent:@"Contents/_MASReceipt/receipt"];
+	// NSString *pathToReceipt = [[[NSBundle mainBundle] bundlePath] stringByAppendingPathComponent:@"Contents/_MASReceipt/receipt"];
 	// this example is not a bundle so it wont work here.
 	
 	if (!validateReceiptAtPath(pathToReceipt))

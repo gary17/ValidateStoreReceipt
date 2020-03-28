@@ -47,7 +47,6 @@
 #warning ************************************
 #endif
 
-
 #ifndef YES_I_HAVE_READ_THE_WARNING_AND_I_ACCEPT_THE_RISK
 
 #warning --- DON'T USE THIS CODE AS IS! IF EVERYONE USES THE SAME CODE
@@ -78,8 +77,7 @@ NSString *kReceiptInAppPurchaseDate				= @"PurchaseDate";
 NSString *kReceiptInAppOriginalTransactionIdentifier	= @"OriginalTransactionIdentifier";
 NSString *kReceiptInAppOriginalPurchaseDate		= @"OriginalPurchaseDate";
 
-
-NSData * appleRootCert(void)
+NSData *appleRootCert(void)
 {
 	OSStatus status;
 
@@ -108,7 +106,7 @@ NSData * appleRootCert(void)
 	}
 
 	SecKeychainItemRef itemRef = nil;
-	NSData * resultData = nil;
+	NSData *resultData = nil;
 
 	while(SecKeychainSearchCopyNext(searchRef, &itemRef) == noErr && resultData == nil) {
 		// Grab the name of the certificate
@@ -146,8 +144,7 @@ NSData * appleRootCert(void)
 	return resultData;
 }
 
-
-NSArray * parseInAppPurchasesData(NSData * inappData)
+NSArray *parseInAppPurchasesData(NSData *inappData)
 {
 #define INAPP_ATTR_START	1700
 #define INAPP_QUANTITY		1701
@@ -333,10 +330,9 @@ NSArray * parseInAppPurchasesData(NSData * inappData)
 	return resultArray;
 }
 
-
-NSDictionary * dictionaryWithAppStoreReceipt(NSString * path)
+NSDictionary *dictionaryWithAppStoreReceipt(NSString *path)
 {
-	NSData * rootCertData = appleRootCert();
+	NSData *rootCertData = appleRootCert();
 
 #define ATTR_START 1
 #define BUNDLE_ID 2
@@ -354,7 +350,7 @@ NSDictionary * dictionaryWithAppStoreReceipt(NSString * path)
 	// an ASN.1 SET of SEQUENCE structures. Each SEQUENCE contains
 	// two INTEGERS and an OCTET STRING.
 
-	const char * receiptPath = [[path stringByStandardizingPath] fileSystemRepresentation];
+	const char *receiptPath = [[path stringByStandardizingPath] fileSystemRepresentation];
 	FILE *fp = fopen(receiptPath, "rb");
 	if (fp == NULL)
 		return nil;
@@ -538,8 +534,6 @@ NSDictionary * dictionaryWithAppStoreReceipt(NSString * path)
 	return info;
 }
 
-
-
 // Returns a CFData object, containing the machine's GUID.
 CFDataRef copy_mac_address(void)
 {
@@ -589,13 +583,13 @@ CFDataRef copy_mac_address(void)
 	return macAddress;
 }
 
-NSArray* obtainInAppPurchases(NSString *receiptPath)
+NSArray *obtainInAppPurchases(NSString *receiptPath)
 {
 	// According to the documentation, we need to validate the receipt first.
 	// If the receipt is not valid, no In-App purchase is valid.
 	// This performs a "quick" validation. Please use validateReceiptAtPath to perform a full validation.
 	
-	NSDictionary * receipt = dictionaryWithAppStoreReceipt(receiptPath);
+	NSDictionary *receipt = dictionaryWithAppStoreReceipt(receiptPath);
 	if (!receipt)
 		return nil;
 	
@@ -606,14 +600,14 @@ NSArray* obtainInAppPurchases(NSString *receiptPath)
 	return purchases;
 }
 
-extern const NSString * global_bundleVersion;
-extern const NSString * global_bundleIdentifier;
+extern const NSString *global_bundleVersion;
+extern const NSString *global_bundleIdentifier;
 
 // in your project define those two somewhere as such:
-// const NSString * global_bundleVersion = @"1.0.2";
-// const NSString * global_bundleIdentifier = @"com.example.SampleApp";
+// const NSString *global_bundleVersion = @"1.0.2";
+// const NSString *global_bundleIdentifier = @"com.example.SampleApp";
 
-BOOL validateReceiptAtPath(NSString * path)
+BOOL validateReceiptAtPath(NSString *path)
 {
 	// it turns out, it's a bad idea, to use these two NSBundle methods in your app:
 	//
@@ -637,12 +631,12 @@ BOOL validateReceiptAtPath(NSString * path)
 	bundleVersion = @"1.0.2";
 	bundleIdentifier = @"com.example.SampleApp";
 #endif
-	NSDictionary * receipt = dictionaryWithAppStoreReceipt(path);
+	NSDictionary *receipt = dictionaryWithAppStoreReceipt(path);
 
 	if (!receipt)
 		return NO;
 
-	NSData * guidData = nil;
+	NSData *guidData = nil;
 #ifndef USE_SAMPLE_RECEIPT
 	#if !__has_feature(objc_arc)
 		guidData = (NSData*)copy_mac_address();

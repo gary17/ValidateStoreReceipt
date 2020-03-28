@@ -26,7 +26,6 @@
 
 #import <Foundation/Foundation.h>
 
-
 extern NSString *kReceiptBundleIdentifer;
 extern NSString *kReceiptBundleIdentiferData;
 extern NSString *kReceiptVersion;
@@ -43,8 +42,8 @@ extern NSString *kReceiptInAppOriginalPurchaseDate;
 
 CFDataRef copy_mac_address(void);
 
-NSArray * parseInAppPurchasesData(NSData * inappData);
-NSDictionary * dictionaryWithAppStoreReceipt(NSString * path);
-NSArray* obtainInAppPurchases(NSString *receiptPath);
-BOOL validateReceiptAtPath(NSString * path);
-NSData * appleRootCert(void);
+NSArray *parseInAppPurchasesData(NSData *inappData);
+NSDictionary *dictionaryWithAppStoreReceipt(NSString *path);
+NSArray *obtainInAppPurchases(NSString *receiptPath);
+BOOL validateReceiptAtPath(NSString *path);
+NSData *appleRootCert(void);
