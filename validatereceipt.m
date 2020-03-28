@@ -135,7 +135,9 @@ NSData * appleRootCert(void)
 		if (itemRef)
 			VRCFRelease(itemRef);
 
+#if !__has_feature(objc_arc)
 		[name release];
+#endif
 	}
 
 	VRCFRelease(searchList);
@@ -242,7 +244,9 @@ NSArray * parseInAppPurchasesData(NSData * inappData)
 							
 							NSNumber *num = [[NSNumber alloc] initWithUnsignedInteger:quantity];
 							[item setObject:num forKey:kReceiptInAppQuantity];
+#if !__has_feature(objc_arc)
 							[num release];
+#endif
 						}
 					}
 					
@@ -275,7 +279,9 @@ NSArray * parseInAppPurchasesData(NSData * inappData)
 																			length:(NSUInteger)str_length
 																		  encoding:NSUTF8StringEncoding];
 								[item setObject:string forKey:key];
+#if !__has_feature(objc_arc)
 								[string release];
+#endif
 							}
 						}
 						if (str_type == V_ASN1_IA5STRING) {
@@ -293,7 +299,9 @@ NSArray * parseInAppPurchasesData(NSData * inappData)
 																			length:(NSUInteger)str_length
 																		  encoding:NSASCIIStringEncoding];
 								[item setObject:string forKey:key];
+#if !__has_feature(objc_arc)
 								[string release];
+#endif
 							}
 						}
 					}
@@ -316,7 +324,9 @@ NSArray * parseInAppPurchasesData(NSData * inappData)
 		}
 		
 		[resultArray addObject:item];
+#if !__has_feature(objc_arc)
 		[item release];
+#endif
 	}
 	
 	return resultArray;
@@ -498,7 +508,9 @@ NSDictionary * dictionaryWithAppStoreReceipt(NSString * path)
 																		length:(NSUInteger)str_length
                                                                       encoding:NSUTF8StringEncoding];
                             [info setObject:string forKey:key];
+#if !__has_feature(objc_arc)
                             [string release];
+#endif
 						}
 					}
 				}
@@ -631,12 +643,17 @@ BOOL validateReceiptAtPath(NSString * path)
 
 	NSData * guidData = nil;
 #ifndef USE_SAMPLE_RECEIPT
-	guidData = (NSData*)copy_mac_address();
+	#if !__has_feature(objc_arc)
+		guidData = (NSData*)copy_mac_address();
 
-	if ([NSGarbageCollector defaultCollector])
-		[[NSGarbageCollector defaultCollector] enableCollectorForPointer:guidData];
-	else
-		[guidData autorelease];
+		if ([NSGarbageCollector defaultCollector])
+			[[NSGarbageCollector defaultCollector] enableCollectorForPointer:guidData];
+		else
+			[guidData autorelease];
+	#else
+		// Transfer ownership of a CFDataRef into ARC
+		guidData = (NSData*)CFBridgingRelease(copy_mac_address());
+	#endif
 
 	if (!guidData)
 		return NO;

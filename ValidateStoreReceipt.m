@@ -24,8 +24,9 @@ const NSString * global_bundleVersion = @"1.0.2";
 const NSString * global_bundleIdentifier = @"com.example.SampleApp";
 
 int main (int argc, const char * argv[]) {
+#if !__has_feature(objc_arc)
     NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
-
+#endif
 	// put the example receipt on the desktop (or change that path)
 	NSString * pathToReceipt = @"~/Desktop/receipt";
 	
@@ -37,6 +38,8 @@ int main (int argc, const char * argv[]) {
 		exit(173);
 	
     NSLog(@"Hello, correctly validated World!");
+#if !__has_feature(objc_arc)
     [pool drain];
+#endif
     return 0;
 }
