@@ -213,6 +213,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -242,6 +243,7 @@
 				GCC_WARN_UNUSED_LABEL = YES;
 				GCC_WARN_UNUSED_VALUE = YES;
 				INSTALL_PATH = /usr/local/bin;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				OTHER_LDFLAGS = "-lcrypto";
 				PRODUCT_NAME = ValidateStoreReceipt;
 				RUN_CLANG_STATIC_ANALYZER = YES;
@@ -252,11 +254,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD)";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = ValidateStoreReceipt_Prefix.pch;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INSTALL_PATH = /usr/local/bin;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				OTHER_LDFLAGS = "-lcrypto";
 				PRODUCT_NAME = ValidateStoreReceipt;
 				RUN_CLANG_STATIC_ANALYZER = YES;
@@ -266,39 +270,43 @@
 		1DEB927908733DD40010E9CD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					x86_64,
-					i386,
-				);
+				ARCHS = "$(ARCHS_STANDARD)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_ENABLE_OBJC_GC = supported;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "../openssl/include\n";
+				LIBRARY_SEARCH_PATHS = (
+					"../openssl/lib/Mac\n../openssl/lib/iOS\n../openssl/lib/iOS",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				OTHER_CFLAGS = (
 					"-DYES_I_HAVE_READ_THE_WARNING_AND_I_ACCEPT_THE_RISK",
 					"-DUSE_SAMPLE_RECEIPT",
 				);
 				RUN_CLANG_STATIC_ANALYZER = YES;
-				SDKROOT = macosx10.6;
+				SDKROOT = macosx;
 			};
 			name = Debug;
 		};
 		1DEB927A08733DD40010E9CD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					x86_64,
-					i386,
-				);
+				ARCHS = "$(ARCHS_STANDARD)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_ENABLE_OBJC_GC = supported;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "../openssl/include\n";
+				LIBRARY_SEARCH_PATHS = (
+					"../openssl/lib/Mac\n../openssl/lib/iOS\n../openssl/lib/iOS",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				RUN_CLANG_STATIC_ANALYZER = YES;
-				SDKROOT = macosx10.6;
+				SDKROOT = macosx;
 			};
 			name = Release;
 		};
@@ -306,6 +314,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD)";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_MODEL_TUNING = G5;
@@ -327,6 +336,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD)";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_MODEL_TUNING = G5;
