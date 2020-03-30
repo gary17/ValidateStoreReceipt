@@ -77,6 +77,10 @@ NSString *kReceiptInAppPurchaseDate				= @"PurchaseDate";
 NSString *kReceiptInAppOriginalTransactionIdentifier	= @"OriginalTransactionIdentifier";
 NSString *kReceiptInAppOriginalPurchaseDate		= @"OriginalPurchaseDate";
 
+NSData *appleRootCert(void);
+NSArray *parseInAppPurchasesData(NSData *inappData);
+CFDataRef copy_mac_address(void);
+
 NSData *appleRootCert(void)
 {
 	OSStatus status;
