@@ -77,11 +77,9 @@ NSString *kReceiptInAppPurchaseDate				= @"PurchaseDate";
 NSString *kReceiptInAppOriginalTransactionIdentifier	= @"OriginalTransactionIdentifier";
 NSString *kReceiptInAppOriginalPurchaseDate		= @"OriginalPurchaseDate";
 
-NSData *appleRootCert(void);
-NSArray *parseInAppPurchasesData(NSData *inappData);
-CFDataRef copy_mac_address(void);
+@implementation ValidateStoreReceipt
 
-NSData *appleRootCert(void)
++ (NSData *)appleRootCert
 {
 	OSStatus status;
 
@@ -148,7 +146,7 @@ NSData *appleRootCert(void)
 	return resultData;
 }
 
-NSArray *parseInAppPurchasesData(NSData *inappData)
++ (NSArray *)parseInAppPurchasesData:(NSData *)inappData
 {
 #define INAPP_ATTR_START	1700
 #define INAPP_QUANTITY		1701
@@ -334,9 +332,9 @@ NSArray *parseInAppPurchasesData(NSData *inappData)
 	return resultArray;
 }
 
-NSDictionary *dictionaryWithAppStoreReceipt(NSString *receiptPath)
++ (NSDictionary *)dictionaryWithAppStoreReceipt:(NSString *)receiptPath
 {
-	NSData *rootCertData = appleRootCert();
+	NSData *rootCertData = [self appleRootCert];
 
 #define ATTR_START 1
 #define BUNDLE_ID 2
@@ -519,7 +517,7 @@ NSDictionary *dictionaryWithAppStoreReceipt(NSString *receiptPath)
 				// In-App purchases
 				if (attr_type == INAPP_PURCHASE)
 				{
-					NSArray *inApp = parseInAppPurchasesData(data);
+					NSArray *inApp = [self parseInAppPurchasesData:data];
 					[info setObject:inApp forKey:kReceiptInApp];
 				}
 			}
@@ -539,7 +537,7 @@ NSDictionary *dictionaryWithAppStoreReceipt(NSString *receiptPath)
 }
 
 // Returns a CFData object, containing the machine's GUID.
-CFDataRef copy_mac_address(void)
++ (CFDataRef)copy_mac_address
 {
 	kern_return_t			 kernResult;
 	mach_port_t			   master_port;
@@ -587,13 +585,13 @@ CFDataRef copy_mac_address(void)
 	return macAddress;
 }
 
-NSArray *obtainInAppPurchases(NSString *receiptPath)
++ (NSArray *)obtainInAppPurchases:(NSString *)receiptPath
 {
 	// According to the documentation, we need to validate the receipt first.
 	// If the receipt is not valid, no In-App purchase is valid.
 	// This performs a "quick" validation. Please use validateReceiptAtPath to perform a full validation.
 	
-	NSDictionary *receipt = dictionaryWithAppStoreReceipt(receiptPath);
+	NSDictionary *receipt = [self dictionaryWithAppStoreReceipt:receiptPath];
 	if (!receipt)
 		return nil;
 	
@@ -611,7 +609,7 @@ extern const NSString *global_bundleIdentifier;
 // const NSString *global_bundleVersion = @"1.0.2";
 // const NSString *global_bundleIdentifier = @"com.example.SampleApp";
 
-BOOL validateReceiptAtPath(NSString *receiptPath)
++ (BOOL)validateReceiptAtPath:(NSString *)receiptPath
 {
 	// it turns out, it's a bad idea, to use these two NSBundle methods in your app:
 	//
@@ -635,7 +633,7 @@ BOOL validateReceiptAtPath(NSString *receiptPath)
 	bundleVersion = @"1.0.2";
 	bundleIdentifier = @"com.example.SampleApp";
 #endif
-	NSDictionary *receipt = dictionaryWithAppStoreReceipt(receiptPath);
+	NSDictionary *receipt = [self dictionaryWithAppStoreReceipt:receiptPath];
 
 	if (!receipt)
 		return NO;
@@ -679,3 +677,5 @@ BOOL validateReceiptAtPath(NSString *receiptPath)
 
 	return NO;
 }
+
+@end

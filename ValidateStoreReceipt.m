@@ -34,7 +34,7 @@ int main (int argc, const char *argv[]) {
 	// NSString *pathToReceipt = [[[NSBundle mainBundle] bundlePath] stringByAppendingPathComponent:@"Contents/_MASReceipt/receipt"];
 	// this example is not a bundle so it wont work here.
 	
-	if (!validateReceiptAtPath(pathToReceipt))
+	if (![ValidateStoreReceipt validateReceiptAtPath:pathToReceipt])
 		exit(173);
 	
     NSLog(@"Hello, correctly validated World!");

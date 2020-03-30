@@ -26,6 +26,8 @@
 
 #import <Foundation/Foundation.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 extern NSString *kReceiptBundleIdentifer;
 extern NSString *kReceiptBundleIdentiferData;
 extern NSString *kReceiptVersion;
@@ -40,6 +42,12 @@ extern NSString *kReceiptInAppPurchaseDate;
 extern NSString *kReceiptInAppOriginalTransactionIdentifier;
 extern NSString *kReceiptInAppOriginalPurchaseDate;
 
-NSDictionary *dictionaryWithAppStoreReceipt(NSString *receiptPath);
-NSArray *obtainInAppPurchases(NSString *receiptPath);
-BOOL validateReceiptAtPath(NSString *receiptPath);
+@interface ValidateStoreReceipt : NSObject
+
++ (nullable NSDictionary *)dictionaryWithAppStoreReceipt:(NSString *)receiptPath;
++ (nullable NSArray *)obtainInAppPurchases:(NSString *)receiptPath;
++ (BOOL)validateReceiptAtPath:(NSString *)receiptPath;
+
+@end
+
+NS_ASSUME_NONNULL_END
