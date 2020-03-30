@@ -3,390 +3,533 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		757917171274DB9800D249AB /* validatereceipt.m in Sources */ = {isa = PBXBuildFile; fileRef = DD5EBFFE1273472D00361AC6 /* validatereceipt.m */; };
-		757917181274DB9D00D249AB /* validatereceipt.h in Headers */ = {isa = PBXBuildFile; fileRef = DD5EBFFD1273472D00361AC6 /* validatereceipt.h */; };
-		8DD76F9A0486AA7600D96B5E /* ValidateStoreReceipt.m in Sources */ = {isa = PBXBuildFile; fileRef = 08FB7796FE84155DC02AAC07 /* ValidateStoreReceipt.m */; settings = {ATTRIBUTES = (); }; };
-		8DD76F9C0486AA7600D96B5E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08FB779EFE84155DC02AAC07 /* Foundation.framework */; };
-		DD5EBFFF1273472D00361AC6 /* validatereceipt.m in Sources */ = {isa = PBXBuildFile; fileRef = DD5EBFFE1273472D00361AC6 /* validatereceipt.m */; };
-		DD5EC0011273474F00361AC6 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD5EC0001273474F00361AC6 /* IOKit.framework */; };
-		DDDE9E931281FFD3003F581D /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDDE9E921281FFD3003F581D /* Security.framework */; };
+		CE193706243254A6003B8270 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CE193705243254A6003B8270 /* AppDelegate.m */; };
+		CE193709243254A6003B8270 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CE193708243254A6003B8270 /* SceneDelegate.m */; };
+		CE19370C243254A6003B8270 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE19370B243254A6003B8270 /* ViewController.m */; };
+		CE19370F243254A6003B8270 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE19370D243254A6003B8270 /* Main.storyboard */; };
+		CE193711243254A8003B8270 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE193710243254A8003B8270 /* Assets.xcassets */; };
+		CE193714243254A8003B8270 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE193712243254A8003B8270 /* LaunchScreen.storyboard */; };
+		CE193717243254A8003B8270 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CE193716243254A8003B8270 /* main.m */; };
+		CE193721243254A8003B8270 /* ValidateStoreReceiptTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CE193720243254A8003B8270 /* ValidateStoreReceiptTests.m */; };
+		CE19373224325B4F003B8270 /* AppleAppStoreSampleReceipt.base64 in Resources */ = {isa = PBXBuildFile; fileRef = CE19372C24325B4F003B8270 /* AppleAppStoreSampleReceipt.base64 */; };
+		CE19373324325B4F003B8270 /* AppleAppStoreSampleReceipt.txt in Resources */ = {isa = PBXBuildFile; fileRef = CE19372D24325B4F003B8270 /* AppleAppStoreSampleReceipt.txt */; };
+		CE19373424325B4F003B8270 /* validatereceipt.m in Sources */ = {isa = PBXBuildFile; fileRef = CE19372E24325B4F003B8270 /* validatereceipt.m */; };
+		CE19373524325B4F003B8270 /* README.markdown in Resources */ = {isa = PBXBuildFile; fileRef = CE19373024325B4F003B8270 /* README.markdown */; };
+		CE19373624325B4F003B8270 /* AppleAppStoreSampleReceipt.bin in Resources */ = {isa = PBXBuildFile; fileRef = CE19373124325B4F003B8270 /* AppleAppStoreSampleReceipt.bin */; };
+		CE19373924326025003B8270 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CE19373824326007003B8270 /* libcrypto.a */; platformFilter = maccatalyst; };
+		CE19373D24326146003B8270 /* AppleIncRootCertificate.cer in Resources */ = {isa = PBXBuildFile; fileRef = CE19373C24326145003B8270 /* AppleIncRootCertificate.cer */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		8DD76F9E0486AA7600D96B5E /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 8;
-			dstPath = /usr/share/man/man1/;
-			dstSubfolderSpec = 0;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 1;
+/* Begin PBXContainerItemProxy section */
+		CE19371D243254A8003B8270 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CE1936F9243254A6003B8270 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CE193700243254A6003B8270;
+			remoteInfo = ValidateStoreReceipt;
 		};
-/* End PBXCopyFilesBuildPhase section */
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		08FB7796FE84155DC02AAC07 /* ValidateStoreReceipt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ValidateStoreReceipt.m; sourceTree = "<group>"; };
-		08FB779EFE84155DC02AAC07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
-		32A70AAB03705E1F00C91783 /* ValidateStoreReceipt_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ValidateStoreReceipt_Prefix.pch; sourceTree = "<group>"; };
-		757917141274DB8300D249AB /* libvalidateAS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libvalidateAS.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		8DD76FA10486AA7600D96B5E /* ValidateStoreReceipt */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ValidateStoreReceipt; sourceTree = BUILT_PRODUCTS_DIR; };
-		DD5EBFFD1273472D00361AC6 /* validatereceipt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = validatereceipt.h; sourceTree = "<group>"; };
-		DD5EBFFE1273472D00361AC6 /* validatereceipt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = validatereceipt.m; sourceTree = "<group>"; };
-		DD5EC0001273474F00361AC6 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
-		DDDE9E921281FFD3003F581D /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		DDDE9F311282135A003F581D /* README.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.markdown; sourceTree = "<group>"; };
+		CE193701243254A6003B8270 /* ValidateStoreReceipt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ValidateStoreReceipt.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE193704243254A6003B8270 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		CE193705243254A6003B8270 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		CE193707243254A6003B8270 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
+		CE193708243254A6003B8270 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
+		CE19370A243254A6003B8270 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		CE19370B243254A6003B8270 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		CE19370E243254A6003B8270 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CE193710243254A8003B8270 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CE193713243254A8003B8270 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CE193715243254A8003B8270 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE193716243254A8003B8270 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		CE19371C243254A8003B8270 /* ValidateStoreReceiptTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ValidateStoreReceiptTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE193720243254A8003B8270 /* ValidateStoreReceiptTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ValidateStoreReceiptTests.m; sourceTree = "<group>"; };
+		CE193722243254A8003B8270 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE19372B243254E8003B8270 /* ValidateStoreReceipt.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ValidateStoreReceipt.entitlements; sourceTree = "<group>"; };
+		CE19372C24325B4F003B8270 /* AppleAppStoreSampleReceipt.base64 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AppleAppStoreSampleReceipt.base64; sourceTree = "<group>"; };
+		CE19372D24325B4F003B8270 /* AppleAppStoreSampleReceipt.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AppleAppStoreSampleReceipt.txt; sourceTree = "<group>"; };
+		CE19372E24325B4F003B8270 /* validatereceipt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = validatereceipt.m; sourceTree = "<group>"; };
+		CE19372F24325B4F003B8270 /* validatereceipt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = validatereceipt.h; sourceTree = "<group>"; };
+		CE19373024325B4F003B8270 /* README.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.markdown; sourceTree = "<group>"; };
+		CE19373124325B4F003B8270 /* AppleAppStoreSampleReceipt.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = AppleAppStoreSampleReceipt.bin; sourceTree = "<group>"; };
+		CE19373824326007003B8270 /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcrypto.a; path = ../../Dev/DevAux/openssl/lib/iOS/libcrypto.a; sourceTree = "<group>"; };
+		CE19373C24326145003B8270 /* AppleIncRootCertificate.cer */ = {isa = PBXFileReference; lastKnownFileType = file; name = AppleIncRootCertificate.cer; path = ValidateStoreReceipt/AppleIncRootCertificate.cer; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		757917121274DB8300D249AB /* Frameworks */ = {
+		CE1936FE243254A6003B8270 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE19373924326025003B8270 /* libcrypto.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8DD76F9B0486AA7600D96B5E /* Frameworks */ = {
+		CE193719243254A8003B8270 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8DD76F9C0486AA7600D96B5E /* Foundation.framework in Frameworks */,
-				DD5EC0011273474F00361AC6 /* IOKit.framework in Frameworks */,
-				DDDE9E931281FFD3003F581D /* Security.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		08FB7794FE84155DC02AAC07 /* ValidateStoreReceipt */ = {
+		CE1936F8243254A6003B8270 = {
 			isa = PBXGroup;
 			children = (
-				08FB7795FE84155DC02AAC07 /* Source */,
-				C6859EA2029092E104C91782 /* Documentation */,
-				08FB779DFE84155DC02AAC07 /* External Frameworks and Libraries */,
-				1AB674ADFE9D54B511CA2CBB /* Products */,
-				DD5EC0001273474F00361AC6 /* IOKit.framework */,
-				DDDE9E921281FFD3003F581D /* Security.framework */,
+				CE193703243254A6003B8270 /* ValidateStoreReceipt */,
+				CE19373B24326131003B8270 /* Resources */,
+				CE19373A24326094003B8270 /* Documentation */,
+				CE19371F243254A8003B8270 /* ValidateStoreReceiptTests */,
+				CE193702243254A6003B8270 /* Products */,
+				CE19373724326007003B8270 /* Frameworks */,
 			);
-			name = ValidateStoreReceipt;
 			sourceTree = "<group>";
 		};
-		08FB7795FE84155DC02AAC07 /* Source */ = {
+		CE193702243254A6003B8270 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DD5EBFFD1273472D00361AC6 /* validatereceipt.h */,
-				DD5EBFFE1273472D00361AC6 /* validatereceipt.m */,
-				32A70AAB03705E1F00C91783 /* ValidateStoreReceipt_Prefix.pch */,
-				08FB7796FE84155DC02AAC07 /* ValidateStoreReceipt.m */,
-			);
-			name = Source;
-			sourceTree = "<group>";
-		};
-		08FB779DFE84155DC02AAC07 /* External Frameworks and Libraries */ = {
-			isa = PBXGroup;
-			children = (
-				08FB779EFE84155DC02AAC07 /* Foundation.framework */,
-			);
-			name = "External Frameworks and Libraries";
-			sourceTree = "<group>";
-		};
-		1AB674ADFE9D54B511CA2CBB /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				8DD76FA10486AA7600D96B5E /* ValidateStoreReceipt */,
-				757917141274DB8300D249AB /* libvalidateAS.a */,
+				CE193701243254A6003B8270 /* ValidateStoreReceipt.app */,
+				CE19371C243254A8003B8270 /* ValidateStoreReceiptTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		C6859EA2029092E104C91782 /* Documentation */ = {
+		CE193703243254A6003B8270 /* ValidateStoreReceipt */ = {
 			isa = PBXGroup;
 			children = (
-				DDDE9F311282135A003F581D /* README.markdown */,
+				CE193704243254A6003B8270 /* AppDelegate.h */,
+				CE193705243254A6003B8270 /* AppDelegate.m */,
+				CE193710243254A8003B8270 /* Assets.xcassets */,
+				CE193715243254A8003B8270 /* Info.plist */,
+				CE193712243254A8003B8270 /* LaunchScreen.storyboard */,
+				CE193716243254A8003B8270 /* main.m */,
+				CE19370D243254A6003B8270 /* Main.storyboard */,
+				CE193707243254A6003B8270 /* SceneDelegate.h */,
+				CE193708243254A6003B8270 /* SceneDelegate.m */,
+				CE19372F24325B4F003B8270 /* validatereceipt.h */,
+				CE19372E24325B4F003B8270 /* validatereceipt.m */,
+				CE19372B243254E8003B8270 /* ValidateStoreReceipt.entitlements */,
+				CE19370A243254A6003B8270 /* ViewController.h */,
+				CE19370B243254A6003B8270 /* ViewController.m */,
+			);
+			path = ValidateStoreReceipt;
+			sourceTree = "<group>";
+		};
+		CE19371F243254A8003B8270 /* ValidateStoreReceiptTests */ = {
+			isa = PBXGroup;
+			children = (
+				CE193720243254A8003B8270 /* ValidateStoreReceiptTests.m */,
+				CE193722243254A8003B8270 /* Info.plist */,
+			);
+			path = ValidateStoreReceiptTests;
+			sourceTree = "<group>";
+		};
+		CE19373724326007003B8270 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CE19373824326007003B8270 /* libcrypto.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CE19373A24326094003B8270 /* Documentation */ = {
+			isa = PBXGroup;
+			children = (
+				CE19373024325B4F003B8270 /* README.markdown */,
 			);
 			name = Documentation;
 			sourceTree = "<group>";
 		};
+		CE19373B24326131003B8270 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CE19372C24325B4F003B8270 /* AppleAppStoreSampleReceipt.base64 */,
+				CE19373124325B4F003B8270 /* AppleAppStoreSampleReceipt.bin */,
+				CE19372D24325B4F003B8270 /* AppleAppStoreSampleReceipt.txt */,
+				CE19373C24326145003B8270 /* AppleIncRootCertificate.cer */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
-/* Begin PBXHeadersBuildPhase section */
-		757917101274DB8300D249AB /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				757917181274DB9D00D249AB /* validatereceipt.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXHeadersBuildPhase section */
-
 /* Begin PBXNativeTarget section */
-		757917131274DB8300D249AB /* validateAS */ = {
+		CE193700243254A6003B8270 /* ValidateStoreReceipt */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7579171B1274DBC400D249AB /* Build configuration list for PBXNativeTarget "validateAS" */;
+			buildConfigurationList = CE193725243254A8003B8270 /* Build configuration list for PBXNativeTarget "ValidateStoreReceipt" */;
 			buildPhases = (
-				757917101274DB8300D249AB /* Headers */,
-				757917111274DB8300D249AB /* Sources */,
-				757917121274DB8300D249AB /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = validateAS;
-			productName = validateAS;
-			productReference = 757917141274DB8300D249AB /* libvalidateAS.a */;
-			productType = "com.apple.product-type.library.static";
-		};
-		8DD76F960486AA7600D96B5E /* ValidateStoreReceipt */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 1DEB927408733DD40010E9CD /* Build configuration list for PBXNativeTarget "ValidateStoreReceipt" */;
-			buildPhases = (
-				8DD76F990486AA7600D96B5E /* Sources */,
-				8DD76F9B0486AA7600D96B5E /* Frameworks */,
-				8DD76F9E0486AA7600D96B5E /* CopyFiles */,
+				CE1936FD243254A6003B8270 /* Sources */,
+				CE1936FE243254A6003B8270 /* Frameworks */,
+				CE1936FF243254A6003B8270 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = ValidateStoreReceipt;
-			productInstallPath = "$(HOME)/bin";
 			productName = ValidateStoreReceipt;
-			productReference = 8DD76FA10486AA7600D96B5E /* ValidateStoreReceipt */;
-			productType = "com.apple.product-type.tool";
+			productReference = CE193701243254A6003B8270 /* ValidateStoreReceipt.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CE19371B243254A8003B8270 /* ValidateStoreReceiptTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CE193728243254A8003B8270 /* Build configuration list for PBXNativeTarget "ValidateStoreReceiptTests" */;
+			buildPhases = (
+				CE193718243254A8003B8270 /* Sources */,
+				CE193719243254A8003B8270 /* Frameworks */,
+				CE19371A243254A8003B8270 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CE19371E243254A8003B8270 /* PBXTargetDependency */,
+			);
+			name = ValidateStoreReceiptTests;
+			productName = ValidateStoreReceiptTests;
+			productReference = CE19371C243254A8003B8270 /* ValidateStoreReceiptTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		08FB7793FE84155DC02AAC07 /* Project object */ = {
+		CE1936F9243254A6003B8270 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0410;
+				LastUpgradeCheck = 1140;
+				ORGANIZATIONNAME = self;
+				TargetAttributes = {
+					CE193700243254A6003B8270 = {
+						CreatedOnToolsVersion = 11.4;
+					};
+					CE19371B243254A8003B8270 = {
+						CreatedOnToolsVersion = 11.4;
+						TestTargetID = CE193700243254A6003B8270;
+					};
+				};
 			};
-			buildConfigurationList = 1DEB927808733DD40010E9CD /* Build configuration list for PBXProject "ValidateStoreReceipt" */;
-			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
-			hasScannedForEncodings = 1;
+			buildConfigurationList = CE1936FC243254A6003B8270 /* Build configuration list for PBXProject "ValidateStoreReceipt" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
 			knownRegions = (
-				English,
-				Japanese,
-				French,
-				German,
+				en,
+				Base,
 			);
-			mainGroup = 08FB7794FE84155DC02AAC07 /* ValidateStoreReceipt */;
+			mainGroup = CE1936F8243254A6003B8270;
+			productRefGroup = CE193702243254A6003B8270 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8DD76F960486AA7600D96B5E /* ValidateStoreReceipt */,
-				757917131274DB8300D249AB /* validateAS */,
+				CE193700243254A6003B8270 /* ValidateStoreReceipt */,
+				CE19371B243254A8003B8270 /* ValidateStoreReceiptTests */,
 			);
 		};
 /* End PBXProject section */
 
-/* Begin PBXSourcesBuildPhase section */
-		757917111274DB8300D249AB /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
+/* Begin PBXResourcesBuildPhase section */
+		CE1936FF243254A6003B8270 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				757917171274DB9800D249AB /* validatereceipt.m in Sources */,
+				CE19373324325B4F003B8270 /* AppleAppStoreSampleReceipt.txt in Resources */,
+				CE193714243254A8003B8270 /* LaunchScreen.storyboard in Resources */,
+				CE19373524325B4F003B8270 /* README.markdown in Resources */,
+				CE193711243254A8003B8270 /* Assets.xcassets in Resources */,
+				CE19373224325B4F003B8270 /* AppleAppStoreSampleReceipt.base64 in Resources */,
+				CE19373624325B4F003B8270 /* AppleAppStoreSampleReceipt.bin in Resources */,
+				CE19373D24326146003B8270 /* AppleIncRootCertificate.cer in Resources */,
+				CE19370F243254A6003B8270 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8DD76F990486AA7600D96B5E /* Sources */ = {
+		CE19371A243254A8003B8270 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CE1936FD243254A6003B8270 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8DD76F9A0486AA7600D96B5E /* ValidateStoreReceipt.m in Sources */,
-				DD5EBFFF1273472D00361AC6 /* validatereceipt.m in Sources */,
+				CE19370C243254A6003B8270 /* ViewController.m in Sources */,
+				CE19373424325B4F003B8270 /* validatereceipt.m in Sources */,
+				CE193706243254A6003B8270 /* AppDelegate.m in Sources */,
+				CE193717243254A8003B8270 /* main.m in Sources */,
+				CE193709243254A6003B8270 /* SceneDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE193718243254A8003B8270 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE193721243254A8003B8270 /* ValidateStoreReceiptTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		CE19371E243254A8003B8270 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CE193700243254A6003B8270 /* ValidateStoreReceipt */;
+			targetProxy = CE19371D243254A8003B8270 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CE19370D243254A6003B8270 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CE19370E243254A6003B8270 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		CE193712243254A8003B8270 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CE193713243254A8003B8270 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
-		1DEB927508733DD40010E9CD /* Debug */ = {
+		CE193723243254A8003B8270 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = ValidateStoreReceipt_Prefix.pch;
-				GCC_TREAT_IMPLICIT_FUNCTION_DECLARATIONS_AS_ERRORS = YES;
-				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_MISSING_FIELD_INITIALIZERS = YES;
-				GCC_WARN_ABOUT_MISSING_NEWLINE = YES;
-				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
-				GCC_WARN_CHECK_SWITCH_STATEMENTS = YES;
-				GCC_WARN_FOUR_CHARACTER_CONSTANTS = YES;
-				GCC_WARN_INITIALIZER_NOT_FULLY_BRACKETED = YES;
-				GCC_WARN_MISSING_PARENTHESES = YES;
-				GCC_WARN_NON_VIRTUAL_DESTRUCTOR = YES;
-				GCC_WARN_PEDANTIC = NO;
-				GCC_WARN_PROTOTYPE_CONVERSION = YES;
-				GCC_WARN_SHADOW = YES;
-				GCC_WARN_SIGN_COMPARE = YES;
-				GCC_WARN_STRICT_SELECTOR_MATCH = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNKNOWN_PRAGMAS = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_LABEL = YES;
-				GCC_WARN_UNUSED_VALUE = YES;
-				INSTALL_PATH = /usr/local/bin;
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				OTHER_LDFLAGS = "-lcrypto";
-				PRODUCT_NAME = ValidateStoreReceipt;
-				RUN_CLANG_STATIC_ANALYZER = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
 			};
 			name = Debug;
 		};
-		1DEB927608733DD40010E9CD /* Release */ = {
+		CE193724243254A8003B8270 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = ValidateStoreReceipt_Prefix.pch;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				INSTALL_PATH = /usr/local/bin;
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				OTHER_LDFLAGS = "-lcrypto";
-				PRODUCT_NAME = ValidateStoreReceipt;
-				RUN_CLANG_STATIC_ANALYZER = YES;
-			};
-			name = Release;
-		};
-		1DEB927908733DD40010E9CD /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD)";
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_ENABLE_OBJC_GC = supported;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				HEADER_SEARCH_PATHS = "../openssl/include\n";
-				LIBRARY_SEARCH_PATHS = (
-					"../openssl/lib/Mac\n../openssl/lib/iOS\n../openssl/lib/iOS",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				OTHER_CFLAGS = (
-					"-DYES_I_HAVE_READ_THE_WARNING_AND_I_ACCEPT_THE_RISK",
-					"-DUSE_SAMPLE_RECEIPT",
-				);
-				RUN_CLANG_STATIC_ANALYZER = YES;
-				SDKROOT = macosx;
-			};
-			name = Debug;
-		};
-		1DEB927A08733DD40010E9CD /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD)";
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_ENABLE_OBJC_GC = supported;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				HEADER_SEARCH_PATHS = "../openssl/include\n";
-				LIBRARY_SEARCH_PATHS = (
-					"../openssl/lib/Mac\n../openssl/lib/iOS\n../openssl/lib/iOS",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				RUN_CLANG_STATIC_ANALYZER = YES;
-				SDKROOT = macosx;
-			};
-			name = Release;
-		};
-		757917151274DB8300D249AB /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD)";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_MODEL_TUNING = G5;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
-				INSTALL_PATH = /usr/local/lib;
-				OTHER_LDFLAGS = (
-					"-framework",
-					Foundation,
-					"-framework",
-					AppKit,
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CE193726243254A8003B8270 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = ValidateStoreReceipt/ValidateStoreReceipt.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3C5ZU28F48;
+				HEADER_SEARCH_PATHS = ../openssl/include;
+				INFOPLIST_FILE = ValidateStoreReceipt/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
 				);
-				PRODUCT_NAME = validateAS;
+				LIBRARY_SEARCH_PATHS = ../openssl/lib/iOS;
+				PRODUCT_BUNDLE_IDENTIFIER = com.self.ValidateStoreReceipt;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		757917161274DB8300D249AB /* Release */ = {
+		CE193727243254A8003B8270 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD)";
-				COPY_PHASE_STRIP = YES;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				GCC_MODEL_TUNING = G5;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
-				INSTALL_PATH = /usr/local/lib;
-				OTHER_LDFLAGS = (
-					"-framework",
-					Foundation,
-					"-framework",
-					AppKit,
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = ValidateStoreReceipt/ValidateStoreReceipt.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3C5ZU28F48;
+				HEADER_SEARCH_PATHS = ../openssl/include;
+				INFOPLIST_FILE = ValidateStoreReceipt/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
 				);
-				PRODUCT_NAME = validateAS;
-				ZERO_LINK = NO;
+				LIBRARY_SEARCH_PATHS = ../openssl/lib/iOS;
+				PRODUCT_BUNDLE_IDENTIFIER = com.self.ValidateStoreReceipt;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		CE193729243254A8003B8270 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = ValidateStoreReceiptTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.self.ValidateStoreReceiptTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ValidateStoreReceipt.app/ValidateStoreReceipt";
+			};
+			name = Debug;
+		};
+		CE19372A243254A8003B8270 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = ValidateStoreReceiptTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.self.ValidateStoreReceiptTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ValidateStoreReceipt.app/ValidateStoreReceipt";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1DEB927408733DD40010E9CD /* Build configuration list for PBXNativeTarget "ValidateStoreReceipt" */ = {
+		CE1936FC243254A6003B8270 /* Build configuration list for PBXProject "ValidateStoreReceipt" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1DEB927508733DD40010E9CD /* Debug */,
-				1DEB927608733DD40010E9CD /* Release */,
+				CE193723243254A8003B8270 /* Debug */,
+				CE193724243254A8003B8270 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1DEB927808733DD40010E9CD /* Build configuration list for PBXProject "ValidateStoreReceipt" */ = {
+		CE193725243254A8003B8270 /* Build configuration list for PBXNativeTarget "ValidateStoreReceipt" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1DEB927908733DD40010E9CD /* Debug */,
-				1DEB927A08733DD40010E9CD /* Release */,
+				CE193726243254A8003B8270 /* Debug */,
+				CE193727243254A8003B8270 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7579171B1274DBC400D249AB /* Build configuration list for PBXNativeTarget "validateAS" */ = {
+		CE193728243254A8003B8270 /* Build configuration list for PBXNativeTarget "ValidateStoreReceiptTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				757917151274DB8300D249AB /* Debug */,
-				757917161274DB8300D249AB /* Release */,
+				CE193729243254A8003B8270 /* Debug */,
+				CE19372A243254A8003B8270 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 08FB7793FE84155DC02AAC07 /* Project object */;
+	rootObject = CE1936F9243254A6003B8270 /* Project object */;
 }

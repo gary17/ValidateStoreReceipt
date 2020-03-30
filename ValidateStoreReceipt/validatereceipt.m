@@ -90,6 +90,17 @@ NSString *kReceiptInAppOriginalPurchaseDate		= @"OriginalPurchaseDate";
 
 + (NSData *)appleRootCert
 {
+#if TARGET_OS_MACCATALYST
+	// "Receipt Validation", https://www.objc.io/issues/17-security/receipt-validation/
+
+	// Load the Apple Root CA (downloaded from https://www.apple.com/certificateauthority/)
+	NSURL *appleRootURL = [[NSBundle mainBundle] URLForResource:@"AppleIncRootCertificate" withExtension:@"cer"];
+	
+	NSData *appleRootData = [NSData dataWithContentsOfURL:appleRootURL];
+	assert(appleRootData && "AppleIncRootCertificate.cer resource missing from app bundle");
+	
+	return appleRootData;
+#else // TARGET_OS_MACCATALYST
 	OSStatus status;
 
 	SecKeychainRef keychain = nil;
@@ -153,6 +164,7 @@ NSString *kReceiptInAppOriginalPurchaseDate		= @"OriginalPurchaseDate";
 	VRCFRelease(searchRef);
 
 	return resultData;
+#endif // TARGET_OS_MACCATALYST
 }
 
 + (NSArray *)parseInAppPurchasesData:(NSData *)inappData
