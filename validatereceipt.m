@@ -210,7 +210,7 @@ NSString *kReceiptInAppOriginalPurchaseDate		= @"OriginalPurchaseDate";
                 // But if someone has a convincing case throwing that out, I might do so, Roddi
 				attr_version = p[0];
 			}
-			(void)attr_version;
+			(void)attr_version; // Inform the static analyzer to ignore a specific dead store
 			p += length;
 			
 			// Only parse attributes we're interested in
