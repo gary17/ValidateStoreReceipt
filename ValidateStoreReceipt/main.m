@@ -27,7 +27,7 @@
 
 #import <UIKit/UIKit.h>
 
-#import "validatereceipt.h"
+#import "ValidateStoreReceipt.h"
 #import "AppDelegate.h"
 
 int main(int argc, char * argv[]) {

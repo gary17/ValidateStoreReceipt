@@ -20,7 +20,7 @@ Missing from this project:
 
 ## Installation
 
-If you have an app that is more or less ready for the App Store, I think you will be able figure it out. Important is that you link with the dependencies listed in validatereceipt.m.
+If you have an app that is more or less ready for the App Store, I think you will be able figure it out. Important is that you link with the dependencies listed in ValidateStoreReceipt.m.
 
 ## Using It
 

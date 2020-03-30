@@ -1,5 +1,5 @@
 //
-//  validatereceipt.h
+//  ValidateStoreReceipt.h
 //
 //  Created by Ruotger Skupin on 23.10.10.
 //  Copyright 2010-2011 Matthew Stevens, Ruotger Skupin, Apple, Alessandro Segala. All rights reserved.

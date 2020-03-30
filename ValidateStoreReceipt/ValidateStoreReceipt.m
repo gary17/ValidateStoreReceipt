@@ -1,5 +1,5 @@
 //
-//  validatereceipt.m
+//  ValidateStoreReceipt.m
 //
 //  Created by Ruotger Skupin on 23.10.10.
 //  Copyright 2010-2011 Matthew Stevens, Ruotger Skupin, Apple, Dave Carlton, Fraser Hess, anlumo, David Keegan, Alessandro Segala. All rights reserved.
@@ -24,7 +24,7 @@
  OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#import "validatereceipt.h"
+#import "ValidateStoreReceipt.h"
 
 // link with Foundation.framework, IOKit.framework, Security.framework and libCrypto (via -lcrypto in Other Linker Flags)
 

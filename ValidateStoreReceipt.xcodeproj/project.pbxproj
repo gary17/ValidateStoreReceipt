@@ -15,13 +15,13 @@
 		CE193714243254A8003B8270 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE193712243254A8003B8270 /* LaunchScreen.storyboard */; };
 		CE193717243254A8003B8270 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CE193716243254A8003B8270 /* main.m */; };
 		CE193721243254A8003B8270 /* ValidateStoreReceiptTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CE193720243254A8003B8270 /* ValidateStoreReceiptTests.m */; };
-		CE19373424325B4F003B8270 /* validatereceipt.m in Sources */ = {isa = PBXBuildFile; fileRef = CE19372E24325B4F003B8270 /* validatereceipt.m */; };
 		CE19373924326025003B8270 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CE19373824326007003B8270 /* libcrypto.a */; platformFilter = maccatalyst; };
 		CE19373D24326146003B8270 /* AppleIncRootCertificate.cer in Resources */ = {isa = PBXBuildFile; fileRef = CE19373C24326145003B8270 /* AppleIncRootCertificate.cer */; };
 		CE19374324326AD3003B8270 /* AppleAppStoreSampleReceipt.txt in Resources */ = {isa = PBXBuildFile; fileRef = CE19373F24326AD2003B8270 /* AppleAppStoreSampleReceipt.txt */; };
 		CE19374424326AD3003B8270 /* AppleAppStoreSampleReceipt.bin in Resources */ = {isa = PBXBuildFile; fileRef = CE19374024326AD2003B8270 /* AppleAppStoreSampleReceipt.bin */; };
 		CE19374524326AD3003B8270 /* AppleAppStoreSampleReceipt.base64 in Resources */ = {isa = PBXBuildFile; fileRef = CE19374124326AD2003B8270 /* AppleAppStoreSampleReceipt.base64 */; };
 		CE19374624326AD3003B8270 /* README.markdown in Resources */ = {isa = PBXBuildFile; fileRef = CE19374224326AD2003B8270 /* README.markdown */; };
+		CE19374924326D2E003B8270 /* ValidateStoreReceipt.m in Sources */ = {isa = PBXBuildFile; fileRef = CE19374824326D2E003B8270 /* ValidateStoreReceipt.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,14 +51,14 @@
 		CE193720243254A8003B8270 /* ValidateStoreReceiptTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ValidateStoreReceiptTests.m; sourceTree = "<group>"; };
 		CE193722243254A8003B8270 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE19372B243254E8003B8270 /* ValidateStoreReceipt.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ValidateStoreReceipt.entitlements; sourceTree = "<group>"; };
-		CE19372E24325B4F003B8270 /* validatereceipt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = validatereceipt.m; sourceTree = "<group>"; };
-		CE19372F24325B4F003B8270 /* validatereceipt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = validatereceipt.h; sourceTree = "<group>"; };
 		CE19373824326007003B8270 /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcrypto.a; path = ../../Dev/DevAux/openssl/lib/iOS/libcrypto.a; sourceTree = "<group>"; };
 		CE19373C24326145003B8270 /* AppleIncRootCertificate.cer */ = {isa = PBXFileReference; lastKnownFileType = file; name = AppleIncRootCertificate.cer; path = ValidateStoreReceipt/AppleIncRootCertificate.cer; sourceTree = "<group>"; };
 		CE19373F24326AD2003B8270 /* AppleAppStoreSampleReceipt.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = AppleAppStoreSampleReceipt.txt; path = ValidateStoreReceipt/AppleAppStoreSampleReceipt.txt; sourceTree = "<group>"; };
 		CE19374024326AD2003B8270 /* AppleAppStoreSampleReceipt.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; name = AppleAppStoreSampleReceipt.bin; path = ValidateStoreReceipt/AppleAppStoreSampleReceipt.bin; sourceTree = "<group>"; };
 		CE19374124326AD2003B8270 /* AppleAppStoreSampleReceipt.base64 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = AppleAppStoreSampleReceipt.base64; path = ValidateStoreReceipt/AppleAppStoreSampleReceipt.base64; sourceTree = "<group>"; };
 		CE19374224326AD2003B8270 /* README.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.markdown; path = ValidateStoreReceipt/README.markdown; sourceTree = "<group>"; };
+		CE19374724326D2E003B8270 /* ValidateStoreReceipt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ValidateStoreReceipt.h; sourceTree = "<group>"; };
+		CE19374824326D2E003B8270 /* ValidateStoreReceipt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ValidateStoreReceipt.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,9 +113,9 @@
 				CE19370D243254A6003B8270 /* Main.storyboard */,
 				CE193707243254A6003B8270 /* SceneDelegate.h */,
 				CE193708243254A6003B8270 /* SceneDelegate.m */,
-				CE19372F24325B4F003B8270 /* validatereceipt.h */,
-				CE19372E24325B4F003B8270 /* validatereceipt.m */,
 				CE19372B243254E8003B8270 /* ValidateStoreReceipt.entitlements */,
+				CE19374724326D2E003B8270 /* ValidateStoreReceipt.h */,
+				CE19374824326D2E003B8270 /* ValidateStoreReceipt.m */,
 				CE19370A243254A6003B8270 /* ViewController.h */,
 				CE19370B243254A6003B8270 /* ViewController.m */,
 			);
@@ -264,7 +264,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE19370C243254A6003B8270 /* ViewController.m in Sources */,
-				CE19373424325B4F003B8270 /* validatereceipt.m in Sources */,
+				CE19374924326D2E003B8270 /* ValidateStoreReceipt.m in Sources */,
 				CE193706243254A6003B8270 /* AppDelegate.m in Sources */,
 				CE193717243254A8003B8270 /* main.m in Sources */,
 				CE193709243254A6003B8270 /* SceneDelegate.m in Sources */,
