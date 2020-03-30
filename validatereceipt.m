@@ -615,30 +615,38 @@ NSString *kReceiptInAppOriginalPurchaseDate		= @"OriginalPurchaseDate";
 	withBundleIdentifier:(NSString *)bundleIdentifier withBundleVersion:(NSString *)bundleVersion
 		withMachineIdentifier:(NSData *)machineIdentifier
 {
-	if (!(bundleIdentifier && bundleVersion && machineIdentifier))
-		return NO;
-
 	NSDictionary *receipt = [self dictionaryWithAppStoreReceipt:receiptPath];
 
 	if (!receipt)
 		return NO;
 
-	NSMutableData *input = [NSMutableData data];
-	[input appendData:machineIdentifier];
-	[input appendData:[receipt objectForKey:kReceiptOpaqueValue]];
-	[input appendData:[receipt objectForKey:kReceiptBundleIdentifierData]];
-
-	NSMutableData *hash = [NSMutableData dataWithLength:SHA_DIGEST_LENGTH];
-	SHA1([input bytes], [input length], [hash mutableBytes]);
-
-	if ([bundleIdentifier isEqualToString:[receipt objectForKey:kReceiptBundleIdentifier]] &&
-		 [bundleVersion isEqualToString:[receipt objectForKey:kReceiptVersion]] &&
-		 [hash isEqualToData:[receipt objectForKey:kReceiptHash]])
+	if (bundleIdentifier)
 	{
-		return YES;
+		if (![bundleIdentifier isEqualToString:[receipt objectForKey:kReceiptBundleIdentifier]])
+			return NO;
+	}
+	
+	if (bundleVersion)
+	{
+		if (![bundleVersion isEqualToString:[receipt objectForKey:kReceiptVersion]])
+			return NO;
+	}
+	
+	if (machineIdentifier)
+	{
+		NSMutableData *input = [NSMutableData data];
+		[input appendData:machineIdentifier];
+		[input appendData:[receipt objectForKey:kReceiptOpaqueValue]];
+		[input appendData:[receipt objectForKey:kReceiptBundleIdentifierData]];
+
+		NSMutableData *hash = [NSMutableData dataWithLength:SHA_DIGEST_LENGTH];
+		SHA1([input bytes], [input length], [hash mutableBytes]);
+		
+		if (![hash isEqualToData:[receipt objectForKey:kReceiptHash]])
+			return NO;
 	}
 
-	return NO;
+	return YES;
 }
 
 @end

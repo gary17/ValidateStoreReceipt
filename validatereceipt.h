@@ -50,8 +50,8 @@ extern NSString *kReceiptInAppOriginalPurchaseDate;
 + (nullable NSArray *)obtainInAppPurchases:(NSString *)receiptPath;
 
 + (BOOL)validateReceiptAtPath:(NSString *)receiptPath
-	withBundleIdentifier:(NSString *)bundleIdentifier withBundleVersion:(NSString *)bundleVersion
-		withMachineIdentifier:(NSData *)machineIdentifier;
+	withBundleIdentifier:(nullable NSString *)bundleIdentifier withBundleVersion:(nullable NSString *)bundleVersion
+		withMachineIdentifier:(nullable NSData *)machineIdentifier;
 
 @end
 
