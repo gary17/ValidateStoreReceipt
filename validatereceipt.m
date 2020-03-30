@@ -39,14 +39,6 @@
 #include <openssl/x509.h>
 #include <openssl/err.h>
 
-//#define USE_SAMPLE_RECEIPT // also defined in the debug build settings
-
-#ifdef USE_SAMPLE_RECEIPT
-#warning ************************************
-#warning ******* USES SAMPLE RECEIPT! *******
-#warning ************************************
-#endif
-
 #ifndef YES_I_HAVE_READ_THE_WARNING_AND_I_ACCEPT_THE_RISK
 
 #warning --- DON'T USE THIS CODE AS IS! IF EVERYONE USES THE SAME CODE
@@ -78,6 +70,23 @@ NSString *kReceiptInAppOriginalTransactionIdentifier	= @"OriginalTransactionIden
 NSString *kReceiptInAppOriginalPurchaseDate		= @"OriginalPurchaseDate";
 
 @implementation ValidateStoreReceipt
+
++ (NSData *)currentMachineIdentifier
+{
+#if !__has_feature(objc_arc)
+	NSData *guidData = (NSData *) [self copy_mac_address];
+
+	if ([NSGarbageCollector defaultCollector])
+		[[NSGarbageCollector defaultCollector] enableCollectorForPointer:guidData];
+	else
+		[guidData autorelease];
+#else
+	// Transfer ownership of a CFDataRef into ARC
+	NSData *guidData = (NSData *)CFBridgingRelease([self copy_mac_address]);
+#endif
+
+	return guidData;
+}
 
 + (NSData *)appleRootCert
 {
@@ -602,66 +611,20 @@ NSString *kReceiptInAppOriginalPurchaseDate		= @"OriginalPurchaseDate";
 	return purchases;
 }
 
-extern const NSString *global_bundleVersion;
-extern const NSString *global_bundleIdentifier;
-
-// in your project define those two somewhere as such:
-// const NSString *global_bundleVersion = @"1.0.2";
-// const NSString *global_bundleIdentifier = @"com.example.SampleApp";
-
 + (BOOL)validateReceiptAtPath:(NSString *)receiptPath
+	withBundleIdentifier:(NSString *)bundleIdentifier withBundleVersion:(NSString *)bundleVersion
+		withMachineIdentifier:(NSData *)machineIdentifier
 {
-	// it turns out, it's a bad idea, to use these two NSBundle methods in your app:
-	//
-	// bundleVersion = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
-	// bundleIdentifier = [[NSBundle mainBundle] bundleIdentifier];
-	//
-	// http://www.craftymind.com/2011/01/06/mac-app-store-hacked-how-developers-can-better-protect-themselves/
-	//
-	// so use hard coded values instead (probably even somehow obfuscated)
+	if (!(bundleIdentifier && bundleVersion && machineIdentifier))
+		return NO;
 
-	// analyser warning when USE_SAMPLE_RECEIPT is defined (wontfix)
-	NSString *bundleVersion = (NSString*)global_bundleVersion;
-	NSString *bundleIdentifier = (NSString*)global_bundleIdentifier;
-#ifndef USE_SAMPLE_RECEIPT
-	// avoid making stupid mistakes --> check again
-	NSCAssert([bundleVersion isEqualToString:[[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"]],
-			 @"whoops! check the hard-coded CFBundleShortVersionString!");
-	NSCAssert([bundleIdentifier isEqualToString:[[NSBundle mainBundle] bundleIdentifier]],
-			 @"whoops! check the hard-coded bundle identifier!");
-#else
-	bundleVersion = @"1.0.2";
-	bundleIdentifier = @"com.example.SampleApp";
-#endif
 	NSDictionary *receipt = [self dictionaryWithAppStoreReceipt:receiptPath];
 
 	if (!receipt)
 		return NO;
 
-	NSData *guidData = nil;
-#ifndef USE_SAMPLE_RECEIPT
-	#if !__has_feature(objc_arc)
-		guidData = (NSData*)copy_mac_address();
-
-		if ([NSGarbageCollector defaultCollector])
-			[[NSGarbageCollector defaultCollector] enableCollectorForPointer:guidData];
-		else
-			[guidData autorelease];
-	#else
-		// Transfer ownership of a CFDataRef into ARC
-		guidData = (NSData*)CFBridgingRelease(copy_mac_address());
-	#endif
-
-	if (!guidData)
-		return NO;
-#else
-	// Overwrite with example GUID for use with example receipt
-	unsigned char guid[] = { 0x00, 0x17, 0xf2, 0xc4, 0xbc, 0xc0 };
-	guidData = [NSData dataWithBytes:guid length:sizeof(guid)];
-#endif
-
 	NSMutableData *input = [NSMutableData data];
-	[input appendData:guidData];
+	[input appendData:machineIdentifier];
 	[input appendData:[receipt objectForKey:kReceiptOpaqueValue]];
 	[input appendData:[receipt objectForKey:kReceiptBundleIdentifierData]];
 

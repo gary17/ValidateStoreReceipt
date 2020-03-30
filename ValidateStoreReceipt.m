@@ -20,9 +20,6 @@
 
 #import "validatereceipt.h"
 
-const NSString *global_bundleVersion = @"1.0.2";
-const NSString *global_bundleIdentifier = @"com.example.SampleApp";
-
 int main (int argc, const char *argv[]) {
 #if !__has_feature(objc_arc)
     NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
@@ -34,8 +31,24 @@ int main (int argc, const char *argv[]) {
 	// NSString *pathToReceipt = [[[NSBundle mainBundle] bundlePath] stringByAppendingPathComponent:@"Contents/_MASReceipt/receipt"];
 	// this example is not a bundle so it wont work here.
 	
-	if (![ValidateStoreReceipt validateReceiptAtPath:pathToReceipt])
+	// WARNING: using [[NSBundle mainBundle] bundleIdentifier] and [[NSBundle mainBundle]
+	// objectForInfoDictionaryKey:@"CFBundleShortVersionString"] might not be secure:
+	//
+	// http://www.craftymind.com/2011/01/06/mac-app-store-hacked-how-developers-can-better-protect-themselves/
+	//
+	// so use hard-coded values instead (probably even obfuscated somehow)
+	
+	// Overwrite with example GUID for use with example receipt
+	// unsigned char guid[] = { 0x00, 0x17, 0xf2, 0xc4, 0xbc, 0xc0 };
+	// guidData = [NSData dataWithBytes:guid length:sizeof(guid)];
+	
+	if (![ValidateStoreReceipt validateReceiptAtPath:pathToReceipt
+			withBundleIdentifier:[[NSBundle mainBundle] bundleIdentifier]
+				withBundleVersion:[[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"]
+					withMachineIdentifier:[ValidateStoreReceipt currentMachineIdentifier]])
+	{
 		exit(173);
+	}
 	
     NSLog(@"Hello, correctly validated World!");
 #if !__has_feature(objc_arc)

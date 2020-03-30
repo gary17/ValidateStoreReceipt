@@ -44,9 +44,14 @@ extern NSString *kReceiptInAppOriginalPurchaseDate;
 
 @interface ValidateStoreReceipt : NSObject
 
++ (NSData *)currentMachineIdentifier;
+
 + (nullable NSDictionary *)dictionaryWithAppStoreReceipt:(NSString *)receiptPath;
 + (nullable NSArray *)obtainInAppPurchases:(NSString *)receiptPath;
-+ (BOOL)validateReceiptAtPath:(NSString *)receiptPath;
+
++ (BOOL)validateReceiptAtPath:(NSString *)receiptPath
+	withBundleIdentifier:(NSString *)bundleIdentifier withBundleVersion:(NSString *)bundleVersion
+		withMachineIdentifier:(NSData *)machineIdentifier;
 
 @end
 
