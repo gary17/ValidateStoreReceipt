@@ -83,7 +83,7 @@ NSData *appleRootCert(void)
 
 	SecKeychainRef keychain = nil;
 	status = SecKeychainOpen("/System/Library/Keychains/SystemRootCertificates.keychain", &keychain);
-	if(status){
+	if(status) {
 		VRCFRelease(keychain);
 		return nil;
 	}
@@ -99,7 +99,7 @@ NSData *appleRootCert(void)
 
 	SecKeychainSearchRef searchRef = nil;
 	status = SecKeychainSearchCreateFromAttributes(searchList, kSecCertificateItemClass, NULL, &searchRef);
-	if(status){
+	if(status) {
 		VRCFRelease(searchRef);
 		VRCFRelease(searchList);
 		return nil;
