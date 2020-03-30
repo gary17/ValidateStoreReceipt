@@ -43,7 +43,7 @@ extern NSString *kReceiptInAppOriginalPurchaseDate;
 CFDataRef copy_mac_address(void);
 
 NSArray *parseInAppPurchasesData(NSData *inappData);
-NSDictionary *dictionaryWithAppStoreReceipt(NSString *path);
+NSDictionary *dictionaryWithAppStoreReceipt(NSString *receiptPath);
 NSArray *obtainInAppPurchases(NSString *receiptPath);
-BOOL validateReceiptAtPath(NSString *path);
+BOOL validateReceiptAtPath(NSString *receiptPath);
 NSData *appleRootCert(void);

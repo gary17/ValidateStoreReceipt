@@ -330,7 +330,7 @@ NSArray *parseInAppPurchasesData(NSData *inappData)
 	return resultArray;
 }
 
-NSDictionary *dictionaryWithAppStoreReceipt(NSString *path)
+NSDictionary *dictionaryWithAppStoreReceipt(NSString *receiptPath)
 {
 	NSData *rootCertData = appleRootCert();
 
@@ -350,8 +350,8 @@ NSDictionary *dictionaryWithAppStoreReceipt(NSString *path)
 	// an ASN.1 SET of SEQUENCE structures. Each SEQUENCE contains
 	// two INTEGERS and an OCTET STRING.
 
-	const char *receiptPath = [[path stringByStandardizingPath] fileSystemRepresentation];
-	FILE *fp = fopen(receiptPath, "rb");
+	const char *filePath = [[receiptPath stringByStandardizingPath] fileSystemRepresentation];
+	FILE *fp = fopen(filePath, "rb");
 	if (fp == NULL)
 		return nil;
 
@@ -607,7 +607,7 @@ extern const NSString *global_bundleIdentifier;
 // const NSString *global_bundleVersion = @"1.0.2";
 // const NSString *global_bundleIdentifier = @"com.example.SampleApp";
 
-BOOL validateReceiptAtPath(NSString *path)
+BOOL validateReceiptAtPath(NSString *receiptPath)
 {
 	// it turns out, it's a bad idea, to use these two NSBundle methods in your app:
 	//
@@ -631,7 +631,7 @@ BOOL validateReceiptAtPath(NSString *path)
 	bundleVersion = @"1.0.2";
 	bundleIdentifier = @"com.example.SampleApp";
 #endif
-	NSDictionary *receipt = dictionaryWithAppStoreReceipt(path);
+	NSDictionary *receipt = dictionaryWithAppStoreReceipt(receiptPath);
 
 	if (!receipt)
 		return NO;
