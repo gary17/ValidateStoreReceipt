@@ -69,10 +69,10 @@ NSString *kReceiptInAppPurchaseDate				= @"PurchaseDate";
 NSString *kReceiptInAppOriginalTransactionIdentifier	= @"OriginalTransactionIdentifier";
 NSString *kReceiptInAppOriginalPurchaseDate		= @"OriginalPurchaseDate";
 
-#if DEBUG // App certificate acquisition has to be performed outside of the Xcode debugger
-	#define DLog(fmt, ...) NSLog((@"ValidateStoreReceipt failure @ %s:%d %s " fmt), __FILE__, __LINE__, __PRETTY_FUNCTION__, ##__VA_ARGS__)
-#else
+#ifdef __OPTIMIZE__ // App certificate acquisition has to be performed outside of the Xcode debugger
 	#define DLog(fmt, ...)
+#else
+	#define DLog(fmt, ...) NSLog((@"ValidateStoreReceipt failure @ %s:%d %s " fmt), __FILE__, __LINE__, __PRETTY_FUNCTION__, ##__VA_ARGS__)
 #endif
 
 @implementation ValidateStoreReceipt
