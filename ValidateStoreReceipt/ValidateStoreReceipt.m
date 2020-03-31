@@ -69,6 +69,12 @@ NSString *kReceiptInAppPurchaseDate				= @"PurchaseDate";
 NSString *kReceiptInAppOriginalTransactionIdentifier	= @"OriginalTransactionIdentifier";
 NSString *kReceiptInAppOriginalPurchaseDate		= @"OriginalPurchaseDate";
 
+#if DEBUG // App certificate acquisition has to be performed outside of the Xcode debugger
+	#define DLog(fmt, ...) NSLog((@"ValidateStoreReceipt failure @ %s:%d %s " fmt), __FILE__, __LINE__, __PRETTY_FUNCTION__, ##__VA_ARGS__)
+#else
+	#define DLog(fmt, ...)
+#endif
+
 @implementation ValidateStoreReceipt
 
 + (NSData *)currentMachineIdentifier
@@ -630,18 +636,27 @@ NSString *kReceiptInAppOriginalPurchaseDate		= @"OriginalPurchaseDate";
 	NSDictionary *receipt = [self dictionaryWithAppStoreReceipt:receiptPath];
 
 	if (!receipt)
+	{
+		DLog(@"invalid or missing receipt");
 		return NO;
+	}
 
 	if (bundleIdentifier)
 	{
 		if (![bundleIdentifier isEqualToString:[receipt objectForKey:kReceiptBundleIdentifier]])
+		{
+			DLog(@"invalid bundle identifier");
 			return NO;
+		}
 	}
 	
 	if (bundleVersion)
 	{
 		if (![bundleVersion isEqualToString:[receipt objectForKey:kReceiptVersion]])
+		{
+			DLog(@"invalid bundle version");
 			return NO;
+		}
 	}
 	
 	if (machineIdentifier)
@@ -655,7 +670,10 @@ NSString *kReceiptInAppOriginalPurchaseDate		= @"OriginalPurchaseDate";
 		SHA1([input bytes], [input length], [hash mutableBytes]);
 		
 		if (![hash isEqualToData:[receipt objectForKey:kReceiptHash]])
+		{
+			DLog(@"invalid machine identifier");
 			return NO;
+		}
 	}
 
 	return YES;
