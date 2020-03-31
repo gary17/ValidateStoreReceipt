@@ -32,7 +32,7 @@
 
 int main(int argc, char * argv[]) {
 
-#ifdef IN_PRODUCTION
+#ifndef DEBUG
 	// i.e., [[[NSBundle mainBundle] bundlePath] stringByAppendingPathComponent:@"Contents/_MASReceipt/receipt"]
 	NSURL *receiptURL = [[NSBundle mainBundle] appStoreReceiptURL];
 
@@ -45,10 +45,6 @@ int main(int argc, char * argv[]) {
 	//
 	// so use hard-coded values instead (probably even obfuscated somehow)
 	
-	// Overwrite with example GUID for use with example receipt
-	// unsigned char guid[] = { 0x00, 0x17, 0xf2, 0xc4, 0xbc, 0xc0 };
-	// guidData = [NSData dataWithBytes:guid length:sizeof(guid)];
-
 	if (![ValidateStoreReceipt validateReceiptAtPath:pathToReceipt
 			withBundleIdentifier:[[NSBundle mainBundle] bundleIdentifier]
 				withBundleVersion:[[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"]
@@ -56,24 +52,7 @@ int main(int argc, char * argv[]) {
 	{
 		exit(173);
 	}
-#else
-	// see AppleAppStoreSampleReceipt.base64, AppleAppStoreSampleReceipt.bin, AppleAppStoreSampleReceipt.txt
-	// source: https://stackoverflow.com/questions/33843281/apple-receipt-data-sample
-
-	NSURL *receiptURL = [[NSBundle mainBundle] URLForResource:@"AppleAppStoreSampleReceipt" withExtension:@"bin"];
-
-	NSString *pathToReceipt = [receiptURL path];
-
-	if (![ValidateStoreReceipt validateReceiptAtPath:pathToReceipt
-			withBundleIdentifier:@"com.belive.app.ios"
-				withBundleVersion:@"3"
-					withMachineIdentifier:/* FIXME: unknown, have to validate partially*/ nil])
-	{
-		exit(173);
-	}
-#endif
-
-    NSLog(@"Hello, correctly validated World!");
+#endif // DEBUG
 
 	//
 

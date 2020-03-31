@@ -8,6 +8,8 @@
 
 #import <XCTest/XCTest.h>
 
+#import "ValidateStoreReceipt.h"
+
 @interface ValidateStoreReceiptTests : XCTestCase
 
 @end
@@ -22,16 +24,23 @@
     // Put teardown code here. This method is called after the invocation of each test method in the class.
 }
 
-- (void)testExample {
-    // This is an example of a functional test case.
-    // Use XCTAssert and related functions to verify your tests produce the correct results.
-}
+- (void)testValidateReceipt001 {
+	// see AppleAppStoreSampleReceipt.base64, AppleAppStoreSampleReceipt.bin, AppleAppStoreSampleReceipt.txt
+	// source: https://stackoverflow.com/questions/33843281/apple-receipt-data-sample
 
-- (void)testPerformanceExample {
-    // This is an example of a performance test case.
-    [self measureBlock:^{
-        // Put the code you want to measure the time of here.
-    }];
+	NSURL *receiptURL = [[NSBundle mainBundle] URLForResource:@"AppleAppStoreSampleReceipt" withExtension:@"bin"];
+	NSString *pathToReceipt = [receiptURL path];
+
+	/*
+	// Overwrite with example GUID for use with example receipt
+	unsigned char guid[] = { 0x00, 0x17, 0xf2, 0xc4, 0xbc, 0xc0 };
+	NSData *machineIdentifier = [NSData dataWithBytes:guid length:sizeof(guid)];
+	*/
+
+	XCTAssert([ValidateStoreReceipt validateReceiptAtPath:pathToReceipt
+			withBundleIdentifier:@"com.belive.app.ios"
+				withBundleVersion:@"3"
+					withMachineIdentifier:/* FIXME: unknown, have to validate partially */ nil]);
 }
 
 @end
