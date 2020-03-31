@@ -31,16 +31,43 @@
 	NSURL *receiptURL = [[NSBundle mainBundle] URLForResource:@"AppleAppStoreSampleReceipt" withExtension:@"bin"];
 	NSString *pathToReceipt = [receiptURL path];
 
-	/*
-	// Overwrite with example GUID for use with example receipt
-	unsigned char guid[] = { 0x00, 0x17, 0xf2, 0xc4, 0xbc, 0xc0 };
-	NSData *machineIdentifier = [NSData dataWithBytes:guid length:sizeof(guid)];
-	*/
-
 	XCTAssert([ValidateStoreReceipt validateReceiptAtPath:pathToReceipt
 			withBundleIdentifier:@"com.belive.app.ios"
 				withBundleVersion:@"3"
 					withMachineIdentifier:/* FIXME: unknown, have to validate partially */ nil]);
+}
+
+- (void)testValidateReceipt002 {
+	NSURL *receiptURL = [[NSBundle mainBundle] URLForResource:@"AppleAppStoreSampleReceipt" withExtension:@"bin"];
+	NSString *pathToReceipt = [receiptURL path];
+
+	XCTAssertFalse([ValidateStoreReceipt validateReceiptAtPath:pathToReceipt
+			withBundleIdentifier:@"com.belive.app.ioS" // modified
+				withBundleVersion:nil
+					withMachineIdentifier:nil]);
+}
+
+- (void)testValidateReceipt003 {
+	NSURL *receiptURL = [[NSBundle mainBundle] URLForResource:@"AppleAppStoreSampleReceipt" withExtension:@"bin"];
+	NSString *pathToReceipt = [receiptURL path];
+
+	XCTAssertFalse([ValidateStoreReceipt validateReceiptAtPath:pathToReceipt
+			withBundleIdentifier:nil
+				withBundleVersion:@"4" // modified
+					withMachineIdentifier:nil]);
+}
+
+- (void)testValidateReceipt004 {
+	NSURL *receiptURL = [[NSBundle mainBundle] URLForResource:@"AppleAppStoreSampleReceipt" withExtension:@"bin"];
+	NSString *pathToReceipt = [receiptURL path];
+
+	Byte guid[] = { 0x00, 0x17, 0xf2, 0xc4, 0xbc, 0xc0 };
+	NSData *machineIdentifier = [NSData dataWithBytes:guid length:sizeof(guid)];
+
+	XCTAssertFalse([ValidateStoreReceipt validateReceiptAtPath:pathToReceipt
+			withBundleIdentifier:nil
+				withBundleVersion:nil
+					withMachineIdentifier:machineIdentifier]); // modified
 }
 
 @end
