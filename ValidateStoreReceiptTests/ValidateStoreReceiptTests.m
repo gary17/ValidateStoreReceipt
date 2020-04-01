@@ -42,7 +42,7 @@
 	NSString *pathToReceipt = [receiptURL path];
 
 	XCTAssertFalse([ValidateStoreReceipt validateReceiptAtPath:pathToReceipt
-			withBundleIdentifier:@"com.belive.app.ioS" // modified
+			withBundleIdentifier:@"com.belive.app.ioS" // mismatch
 				withBundleVersion:nil
 					withMachineIdentifier:nil]);
 }
@@ -53,7 +53,7 @@
 
 	XCTAssertFalse([ValidateStoreReceipt validateReceiptAtPath:pathToReceipt
 			withBundleIdentifier:nil
-				withBundleVersion:@"4" // modified
+				withBundleVersion:@"4" // mismatch
 					withMachineIdentifier:nil]);
 }
 
@@ -67,7 +67,7 @@
 	XCTAssertFalse([ValidateStoreReceipt validateReceiptAtPath:pathToReceipt
 			withBundleIdentifier:nil
 				withBundleVersion:nil
-					withMachineIdentifier:machineIdentifier]); // modified
+					withMachineIdentifier:machineIdentifier]); // mismatch
 }
 
 @end
