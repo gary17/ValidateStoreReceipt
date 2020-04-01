@@ -20,8 +20,8 @@
 		CE19374324326AD3003B8270 /* AppleAppStoreSampleReceipt.txt in Resources */ = {isa = PBXBuildFile; fileRef = CE19373F24326AD2003B8270 /* AppleAppStoreSampleReceipt.txt */; };
 		CE19374424326AD3003B8270 /* AppleAppStoreSampleReceipt.bin in Resources */ = {isa = PBXBuildFile; fileRef = CE19374024326AD2003B8270 /* AppleAppStoreSampleReceipt.bin */; };
 		CE19374524326AD3003B8270 /* AppleAppStoreSampleReceipt.base64 in Resources */ = {isa = PBXBuildFile; fileRef = CE19374124326AD2003B8270 /* AppleAppStoreSampleReceipt.base64 */; };
-		CE19374624326AD3003B8270 /* README.markdown in Resources */ = {isa = PBXBuildFile; fileRef = CE19374224326AD2003B8270 /* README.markdown */; };
 		CE19374924326D2E003B8270 /* ValidateStoreReceipt.m in Sources */ = {isa = PBXBuildFile; fileRef = CE19374824326D2E003B8270 /* ValidateStoreReceipt.m */; };
+		CE274C112434CF52009204A6 /* README.markdown in Resources */ = {isa = PBXBuildFile; fileRef = CE274C102434CF52009204A6 /* README.markdown */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,9 +56,9 @@
 		CE19373F24326AD2003B8270 /* AppleAppStoreSampleReceipt.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = AppleAppStoreSampleReceipt.txt; path = ValidateStoreReceipt/AppleAppStoreSampleReceipt.txt; sourceTree = "<group>"; };
 		CE19374024326AD2003B8270 /* AppleAppStoreSampleReceipt.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; name = AppleAppStoreSampleReceipt.bin; path = ValidateStoreReceipt/AppleAppStoreSampleReceipt.bin; sourceTree = "<group>"; };
 		CE19374124326AD2003B8270 /* AppleAppStoreSampleReceipt.base64 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = AppleAppStoreSampleReceipt.base64; path = ValidateStoreReceipt/AppleAppStoreSampleReceipt.base64; sourceTree = "<group>"; };
-		CE19374224326AD2003B8270 /* README.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.markdown; path = ValidateStoreReceipt/README.markdown; sourceTree = "<group>"; };
 		CE19374724326D2E003B8270 /* ValidateStoreReceipt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ValidateStoreReceipt.h; sourceTree = "<group>"; };
 		CE19374824326D2E003B8270 /* ValidateStoreReceipt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ValidateStoreReceipt.m; sourceTree = "<group>"; };
+		CE274C102434CF52009204A6 /* README.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.markdown; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,7 +142,7 @@
 		CE19373A24326094003B8270 /* Documentation */ = {
 			isa = PBXGroup;
 			children = (
-				CE19374224326AD2003B8270 /* README.markdown */,
+				CE274C102434CF52009204A6 /* README.markdown */,
 			);
 			name = Documentation;
 			sourceTree = "<group>";
@@ -242,9 +242,9 @@
 				CE19374324326AD3003B8270 /* AppleAppStoreSampleReceipt.txt in Resources */,
 				CE193711243254A8003B8270 /* Assets.xcassets in Resources */,
 				CE19373D24326146003B8270 /* AppleIncRootCertificate.cer in Resources */,
-				CE19374624326AD3003B8270 /* README.markdown in Resources */,
 				CE19374424326AD3003B8270 /* AppleAppStoreSampleReceipt.bin in Resources */,
 				CE19374524326AD3003B8270 /* AppleAppStoreSampleReceipt.base64 in Resources */,
+				CE274C112434CF52009204A6 /* README.markdown in Resources */,
 				CE19370F243254A6003B8270 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
