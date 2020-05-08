@@ -437,7 +437,11 @@ NSString *kReceiptInAppOriginalPurchaseDate		= @"OriginalPurchaseDate";
 		}
 		X509_STORE_free(store);
 	}
+	
+#if 0
+	// removes all ciphers and digests from the table
 	EVP_cleanup();
+#endif
 
 	if (verifyReturnValue != 1)
 	{
