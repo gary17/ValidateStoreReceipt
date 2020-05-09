@@ -81,13 +81,23 @@
 	NSURL *receiptURL = [[NSBundle mainBundle] URLForResource:@"AppleAppStoreSampleReceipt" withExtension:@"bin"];
 	NSString *pathToReceipt = [receiptURL path];
 
+	XCTAssert([ValidateStoreReceipt validateReceiptAtPath:pathToReceipt
+			withBundleIdentifier:nil // any
+				withBundleVersion:nil // any
+					withMachineIdentifier:nil]); // any
+}
+
+- (void)testValidateReceipt100 {
+	NSURL *receiptURL = [[NSBundle mainBundle] URLForResource:@"AppleAppStoreSampleReceipt" withExtension:@"bin"];
+	NSString *pathToReceipt = [receiptURL path];
+
 	XCTAssertFalse([ValidateStoreReceipt validateReceiptAtPath:pathToReceipt
 			withBundleIdentifier:@"com.belive.app.ioS" // mismatch
 				withBundleVersion:nil
 					withMachineIdentifier:nil]);
 }
 
-- (void)testValidateReceipt003 {
+- (void)testValidateReceipt101 {
 	NSURL *receiptURL = [[NSBundle mainBundle] URLForResource:@"AppleAppStoreSampleReceipt" withExtension:@"bin"];
 	NSString *pathToReceipt = [receiptURL path];
 
@@ -97,7 +107,7 @@
 					withMachineIdentifier:nil]);
 }
 
-- (void)testValidateReceipt004 {
+- (void)testValidateReceipt102 {
 	NSURL *receiptURL = [[NSBundle mainBundle] URLForResource:@"AppleAppStoreSampleReceipt" withExtension:@"bin"];
 	NSString *pathToReceipt = [receiptURL path];
 
@@ -110,7 +120,7 @@
 					withMachineIdentifier:machineIdentifier]); // mismatch
 }
 
-- (void)testValidateReceipt005 {
+- (void)testValidateReceipt103 {
 	NSURL *receiptURL = [[NSBundle mainBundle] URLForResource:@"AppleAppStoreSampleReceipt" withExtension:@"bin"];
 	NSString *pathToReceiptLHS = [receiptURL path];
 
