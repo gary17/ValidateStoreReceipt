@@ -87,6 +87,45 @@
 					withMachineIdentifier:nil]); // any
 }
 
+- (void)testValidateReceipt003 {
+	NSURL *receiptURL = [[NSBundle mainBundle] URLForResource:@"AppleAppStoreSampleReceipt" withExtension:@"bin"];
+	NSString *pathToReceipt = [receiptURL path];
+
+	NSArray *purchases = [ValidateStoreReceipt obtainInAppPurchases:pathToReceipt];
+	XCTAssert(purchases);
+	
+	/*
+	
+	"in_app": [{
+		"quantity": "1",
+		"product_id": "test2",
+		"transaction_id": "1000000472106082",
+		"original_transaction_id": "1000000472106082",
+		"purchase_date": "2018-11-13 16:46:31 Etc/GMT",
+		"purchase_date_ms": "1542127591000",
+		"purchase_date_pst": "2018-11-13 08:46:31 America/Los_Angeles",
+		"original_purchase_date": "2018-11-13 16:46:31 Etc/GMT",
+		"original_purchase_date_ms": "1542127591000",
+		"original_purchase_date_pst": "2018-11-13 08:46:31 America/Los_Angeles",
+		"is_trial_period": "false"
+	}]
+	
+	*/
+
+	NSString *productIdentifier = @"test2";
+	
+	const BOOL haveIt = ^{
+		for (NSDictionary *purchase in purchases)
+		{
+			if ([[purchase objectForKey:kReceiptInAppProductIdentifier] isEqualToString:productIdentifier])
+				return YES;
+		}
+		return NO;
+	}();
+	
+	XCTAssert(haveIt);
+}
+
 - (void)testValidateReceipt100 {
 	NSURL *receiptURL = [[NSBundle mainBundle] URLForResource:@"AppleAppStoreSampleReceipt" withExtension:@"bin"];
 	NSString *pathToReceipt = [receiptURL path];
